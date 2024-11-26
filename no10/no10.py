@@ -15,15 +15,15 @@ st.sidebar.header("Navigasi")
 menu = st.sidebar.selectbox("Pilih Halaman", ["Dataset", "Visualisasi", "Prediksi Harga"])
 
 # Load dataset
-df = pd.read_csv(r'C:\xampp\htdocs\Deploy\CarPrice_Assignment.csv')
+df = pd.read_csv(r'C:\xampp\htdocs\Deploy\no10\CarPrice_Assignment.csv')
 st.sidebar.write(f"Total data: {len(df)}")
 
 # Fungsi untuk menyimpan model
-def save_model(model, filename=r'C:\xampp\htdocs\Deploy\linear_regression_model.sav'):
+def save_model(model, filename=r'C:\xampp\htdocs\Deploy\no10\linear_regression_model.sav'):
     pickle.dump(model, open(filename, 'wb'))
 
 # Fungsi untuk memuat model
-def load_model(filename=r'C:\xampp\htdocs\Deploy\linear_regression_model.sav'):
+def load_model(filename=r'C:\xampp\htdocs\Deploy\no10\linear_regression_model.sav'):
     if os.path.exists(filename):
         return pickle.load(open(filename, 'rb'))
     else:
